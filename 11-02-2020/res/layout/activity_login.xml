@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context=".Login">
+    <ImageView
+        android:id="@+id/login_img_view"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/practice_prasting"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="UserName"
+        android:textColor="#000"
+        android:layout_marginTop="10dp"
+        android:textSize="18dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/edit_text_style_green"
+        android:layout_marginTop="10dp"
+        android:padding="5dp"
+        android:hint="@string/username_et"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:layout_marginTop="10dp"
+        android:textColor="#000"
+        android:textSize="18dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/edit_text_style_red"
+        android:layout_marginTop="10dp"
+        android:padding="5dp"
+        android:hint="@string/password_et"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I Agree for all condition"/>
+    <Button
+        android:id="@+id/login_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_radius"
+        android:textColor="#FFFFFF"
+        android:textAllCaps="false"
+        android:text="Login"
+        android:layout_marginTop="10dp"
+        android:textSize="27dp"/>
+
+
+</LinearLayout>
