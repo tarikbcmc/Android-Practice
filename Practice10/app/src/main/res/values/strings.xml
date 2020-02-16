@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Practice1.0</string>
+    <string name="main_title">Practice Apps DEV</string>
+
+    <!--    for login page -->
+    <string name="username_et">Enter Your Username</string>
+    <string name="password_et">Enter Your Password</string>
+    <string name="conf_password_et">Confirm Password</string>
+
+</resources>
