@@ -41,7 +41,7 @@ public class Login extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Plsease Check Agree Box", Toast.LENGTH_SHORT).show();
 
                 }else{
-                    Toast.makeText(getApplicationContext(), "Login Successfully\nUsername: " + UN, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Login Successfully\nUsername: " + UN+"\nPassword:"+pass, Toast.LENGTH_SHORT).show();
 
                 }
             }
