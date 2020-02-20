@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         search_et =(EditText) findViewById(R.id.Search_ET);
         searach_res_tv =(TextView) findViewById(R.id.Search_Res_TV);
 
-        findViewById(R.id.Home_layout).setBackgroundColor(R.color.titleColor);
 
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +43,17 @@ public class MainActivity extends AppCompatActivity {
 //                startActivity(new Intent(MainActivity.this,Registration.class));
 
                 Intent i = new Intent(MainActivity.this,Registration.class);
+                startActivity(i);
+            }
+        });
+
+//       click mcq button
+        findViewById(R.id.mcq_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                startActivity(new Intent(MainActivity.this,Registration.class));
+
+                Intent i = new Intent(MainActivity.this,mcq.class);
                 startActivity(i);
             }
         });
