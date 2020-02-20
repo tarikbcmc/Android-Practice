@@ -4,18 +4,29 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     Button login_btn;
+    EditText search_et;
+    TextView searach_res_tv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         login_btn =(Button)findViewById(R.id.login_btn);
+        search_et =(EditText) findViewById(R.id.Search_ET);
+        searach_res_tv =(TextView) findViewById(R.id.Search_Res_TV);
+
+        findViewById(R.id.Home_layout).setBackgroundColor(R.color.titleColor);
+
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -25,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
 //       click registration button
         findViewById(R.id.reg_btn).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,6 +45,24 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent i = new Intent(MainActivity.this,Registration.class);
                 startActivity(i);
+            }
+        });
+
+//        This code for get text from textView Automatically
+        search_et.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int i, int i1, int i2) {
+                searach_res_tv.setText(""+s);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
             }
         });
 
