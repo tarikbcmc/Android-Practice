@@ -16,7 +16,9 @@ public class mcq extends AppCompatActivity {
     TextView question_tv;
     RadioGroup radioGroup;
     RadioButton op1,op2,op3;
-    int pos=0;
+    int pos=0,right_ans=0,W_ans=0,score=0;
+    String user_ans="";
+    RadioButton radioButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,12 +49,42 @@ public class mcq extends AppCompatActivity {
 
 
         //load first mcq
-        question_tv.setText(""+questions(0,q));
+        question_tv.setText(""+questions(pos,q));
         options(pos,op);
+
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int id) {
+                radioButton = (RadioButton)findViewById(id);
+                if(radioButton.isChecked()){
+                    user_ans = radioButton.getText().toString();
+
+                }
+            }
+        });
+
 
         findViewById(R.id.next_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                //check answer
+                if(user_ans.equals(answer(pos,ans))){
+                    Toast.makeText(mcq.this, "right", Toast.LENGTH_SHORT).show();
+                    score++;
+                    right_ans++;
+                    TextView score = (TextView)findViewById(R.id.score_ans_tv);
+                    score.setText(""+score);
+                    TextView rans = (TextView)findViewById(R.id.right_ans_tv);
+                    rans.setText(""+right_ans);
+
+                }else{
+                    Toast.makeText(mcq.this, "wrong", Toast.LENGTH_SHORT).show();
+                    W_ans++;
+                    TextView wans = (TextView)findViewById(R.id.wrong_ans_tv);
+                    wans.setText(""+W_ans);
+                }
+                //this condition for increment position
                 if (pos<q.length-1){
                     pos++;
                 }else{
@@ -60,6 +92,8 @@ public class mcq extends AppCompatActivity {
                 }
                 question_tv.setText(""+questions(pos,q));
                 options(pos,op);
+
+                radioButton.setChecked(false);
 
             }
         });
@@ -69,6 +103,9 @@ public class mcq extends AppCompatActivity {
 
     public static String questions(int pos, String[] q){
         return q[pos];
+    }
+    public static String answer(int pos, String[] a){
+        return a[pos];
     }
 
     public void options(int pos, String[][] op){
