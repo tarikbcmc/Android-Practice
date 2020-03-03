@@ -76,6 +76,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+//       click webview button
+        findViewById(R.id.webView_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                startActivity(new Intent(MainActivity.this,Registration.class));
+
+                Intent i = new Intent(MainActivity.this,webView.class);
+                startActivity(i);
+            }
+        });
 
 //        This code for get text from textView Automatically
         search_et.addTextChangedListener(new TextWatcher() {
@@ -95,9 +105,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
     }
-
-
 
 }
