@@ -57,6 +57,16 @@
                android:text="MCQ"
                android:layout_marginTop="10dp"
                android:textSize="27dp"/>
+           <Button
+               android:id="@+id/list_btn"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:background="@drawable/btn_radius"
+               android:textColor="#FFFFFF"
+               android:textAllCaps="false"
+               android:text="Students List"
+               android:layout_marginTop="10dp"
+               android:textSize="27dp"/>
            <EditText
                android:id="@+id/Search_ET"
                android:layout_width="match_parent"

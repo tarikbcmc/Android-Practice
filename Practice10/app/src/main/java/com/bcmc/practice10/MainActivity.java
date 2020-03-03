@@ -3,6 +3,7 @@ package com.bcmc.practice10;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -20,6 +21,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.nationsong);
+        try {
+            mp.start();
+        }catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_SHORT).show();
+        }
 
         login_btn =(Button)findViewById(R.id.login_btn);
         search_et =(EditText) findViewById(R.id.Search_ET);
@@ -54,6 +63,16 @@ public class MainActivity extends AppCompatActivity {
 //                startActivity(new Intent(MainActivity.this,Registration.class));
 
                 Intent i = new Intent(MainActivity.this,mcq.class);
+                startActivity(i);
+            }
+        });
+//       click listView button
+        findViewById(R.id.list_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                startActivity(new Intent(MainActivity.this,Registration.class));
+
+                Intent i = new Intent(MainActivity.this,studentsList.class);
                 startActivity(i);
             }
         });
